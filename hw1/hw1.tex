@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{mathtools, amssymb, amsthm}
+\begin{document}
+\begin{enumerate}
+	\item A function $f: R^n \rightarrow R^m$ is called affine if for any $x, y \in R^n$ and any $\alpha, \beta \in R$ with $\alpha + \beta = 1$, we have
+$$
+f(\alpha x + \beta y) = \alpha f(x) + \beta f(x)
+$$
+	\begin{enumerate}
+		\item Let $x,y \in R^m, \alpha, \beta \in R$. Take $f(\alpha x + \beta y) = A(\alpha x + \beta y) + b$. Without loss of generality, take an entry $z_{i}$ from $z \in R^m$, $z$ the result of $f(\alpha x + \beta y)$. Let $c_{i1}, c_{i2},...,c_{im}$ be the coefficients in the $i$th row of matrix $A$ ($A$ must be $m \times m$ for $Ax$ to make sense). Then $z_{i}= c_{i1}(\alpha x_{1} + \beta y_{1}) + ... +c_{im}(\alpha x_{m} + \beta y_{m}) + b_{i} = c_{i1}(\alpha x_{1})  c_{i1}(\beta y_{1}) + ... +c_{im}(\alpha x_{m}) + c_{im}(\beta y_{m}) + {\alpha + \beta} b_{i}$ (By distribution of scalar multiplication and the fact that $\alpha + \beta = 1$) $= A(\alpha x) + A(\beta y ) + (\alpha + \beta)b = \alpha A(x) + \beta A(y) + \alpha b + \beta b = \alpha A(x) + \alpha b + \beta A(y) + \beta b$ (By commutativity of vector addition, homogenity of matrix multiplication) $ = f(\alpha x) + f(\beta y). \blacksquare$
+		\item Let $g(x) = f(x) - f(0)$. Then $g(x) = A(x) + b - (A(0) + b) = A(x) + b - b = A(x)$. Then $g(x)$ is linear by the fact that every matrix product is a linear operation. Therefore for any $f(x)$, the matrix $A$ is unique. Then $b$ is unique, since it is uniquely determined by $\abs{A_{i}} +  b_{i} = 1$.
+	\end{enumerate}
+\end{enumerate}
+\end{document}
